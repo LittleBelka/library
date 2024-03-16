@@ -1,12 +1,14 @@
 package digital.library.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 
-public record User(
+public record User (
         Integer id,
         String name,
-        String firstName,
-        LocalDate memberSince,
-        LocalDate memberTill,
+        @JsonProperty("first_name") String firstName,
+        @JsonProperty("member_since") LocalDate memberSince,
+        @JsonProperty("member_till") LocalDate memberTill,
         String gender
 ) {}
